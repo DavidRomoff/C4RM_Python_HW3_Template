@@ -1,8 +1,6 @@
 import inspect
 import pandas as pd
 import numpy as np
-import numpy as np
-from scipy.stats import norm
 
 import WhoAmI_File
 def test_WhoAmI():
@@ -24,7 +22,7 @@ def test_YahooData2returns():
 import Var_File
 def test_VaR():
     r = np.random.normal(0.05, 0.03, 1000000)
-    probability2SD = norm.cdf(2)  
+    probability2SD = 0.977249868
     percent_var = Var_File.VaR(r, probability2SD)
     assert np.round(percent_var, 2) == 0.01
 
